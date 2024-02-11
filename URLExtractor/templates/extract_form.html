@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Extract Form</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+       h4 {
+            text-align: center;
+            color: #333;
+            margin-top: 10px;
+            margin-bottom: 15px;
+            font-size: 28px;
+        }
+        table tbody tr:hover {
+    background-color: #f0f8ff; /* Light blue color */
+}
+        /* Additional CSS */
+        .form-group label {
+            font-weight: bold; /* Make label text bold */
+        }
+        .form-group input[type="url"] {
+            width: 100%; /* Increase width of the text box */
+        }
+        .table td, .table th {
+            width: 20%; /* Reduce the width of the columns */
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+      
+        <h4 class="text-center"> Extract URLs from Webpage</h4>
+        <form method="post" class="text-center mb-3 text-bold">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit" class="btn text-bold btn-primary btn-lg">Extract URLs</button>
+        </form>
+    
+        <table class="table table-bordered">
+            <thead class="thead-dark">
+                <tr>
+                    <th scope="col">Link</th>
+                    <th scope="col">Type</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% if extracted_data %}
+                    {% for article in extracted_data %}
+                        <tr>
+                            <td><a href="{{ article.link }}">{{ article.link }}</a></td>
+                            <td>{{ article.link_type }}</td>
+                        </tr>
+                    {% endfor %}
+                {% else %}
+                    <tr>
+                        <td colspan="2">No URLs extracted yet.</td>
+                    </tr>
+                {% endif %}
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>
