@@ -9,17 +9,17 @@ A scalable application designed to extract URL data from webpages for analytics.
 
 ![image](https://github.com/Malini-ux/URL-Extractor-Web-app-tool-Django/assets/114894629/7af7d550-fee3-4825-98a7-4c6cb86950f4)
 
-## Features:
+## Features
 
 **URL Extraction:** Input a webpage URL and utilize BeautifulSoup to extract all URLs contained within the webpage.
 
 **Link Type Detection:** Automatically categorize extracted links as internal, external, relative, or other types.
 
-**Caching Mechanism:** Utilize caching mechanisms like Redis to improve performance.
+**Caching Mechanism:** Utilize caching mechanism integrating with Redis to improve performance.
 
 **User Interface:** Designed with Bootstrap for a responsive and user-friendly interface.
 
-**Debugging Tool:**: Django's built-in debugging tool to measure cache and other performance metrics.
+**Debugging Tool:**: Django's debugger toolbar can be used to measure cache and other performance metrics.
 
 
 
