@@ -22,6 +22,8 @@ A scalable application designed to extract URL data from webpages for analytics.
 **Debugging Tool:**: Django's built-in debugging tool to measure cache and other performance metrics.
 
 
+
+
 ## Dependencies
 
 - Django
